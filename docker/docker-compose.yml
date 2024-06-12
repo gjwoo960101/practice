@@ -1,0 +1,20 @@
+services:
+  test_rainbow:
+    build:
+      context: ./
+      dockerfile: Dockerfile.tomcat
+    ports:
+    - '6775:8080'
+    
+  test_db:
+    image: mariadb
+    container_name: test_db
+    ports:
+      - 3030:3306
+    volumes:
+      - './data:/var/lib/mysql'
+    environment:
+      MARIADB_USER: root
+      MARIADB_PASSWORD: 1234
+      MARIADB_ROOT_PASSWORD: 1234
+      

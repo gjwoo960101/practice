@@ -1,0 +1,7 @@
+FROM tomcat:8.5-jre8
+
+EXPOSE 1020
+
+# CMD ["sleep", "infinity"]
+
+COPY ./*.war /usr/local/tomcat/webapps/ROOT.war
